@@ -12,6 +12,8 @@ import Vision
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,6 +46,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             guard let results = finishedReq.results as? [VNClassificationObservation] else {return}
             guard let firstObservation = results.first else {return}
             print(firstObservation.identifier, firstObservation.confidence)
+            DispatchQueue.main.async {
+                self.descriptionLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)"
+            }
         }
         
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
