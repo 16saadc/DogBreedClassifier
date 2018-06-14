@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A441864720D1A7CE00B25D9A /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A441864620D1A7CE00B25D9A /* Resnet50.mlmodel */; };
-		A455EFAD20D19235008E09B1 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A455EFAC20D19235008E09B1 /* SqueezeNet.mlmodel */; };
+		A486B00920D1F7F40097F154 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A486B00820D1F7F40097F154 /* VGG16.mlmodel */; };
 		A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5C20D17F9800935E84 /* AppDelegate.swift */; };
 		A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5E20D17F9800935E84 /* ViewController.swift */; };
 		A4B15C6220D17F9800935E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6020D17F9800935E84 /* Main.storyboard */; };
@@ -18,8 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A441864620D1A7CE00B25D9A /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../Downloads/Resnet50.mlmodel; sourceTree = "<group>"; };
-		A455EFAC20D19235008E09B1 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlmodel; path = ../../../../Downloads/SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		A486B00820D1F7F40097F154 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = VGG16.mlmodel; path = ../../../../Downloads/VGG16.mlmodel; sourceTree = "<group>"; };
 		A4B15C5920D17F9800935E84 /* coreMLTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coreMLTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B15C5C20D17F9800935E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B15C5E20D17F9800935E84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,8 +60,7 @@
 			children = (
 				A4B15C5C20D17F9800935E84 /* AppDelegate.swift */,
 				A4B15C5E20D17F9800935E84 /* ViewController.swift */,
-				A455EFAC20D19235008E09B1 /* SqueezeNet.mlmodel */,
-				A441864620D1A7CE00B25D9A /* Resnet50.mlmodel */,
+				A486B00820D1F7F40097F154 /* VGG16.mlmodel */,
 				A4B15C6020D17F9800935E84 /* Main.storyboard */,
 				A4B15C6620D17F9900935E84 /* Assets.xcassets */,
 				A4B15C6820D17F9900935E84 /* LaunchScreen.storyboard */,
@@ -144,11 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A441864720D1A7CE00B25D9A /* Resnet50.mlmodel in Sources */,
 				A4B15C6520D17F9800935E84 /* coreMLTutorial.xcdatamodeld in Sources */,
+				A486B00920D1F7F40097F154 /* VGG16.mlmodel in Sources */,
 				A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */,
 				A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */,
-				A455EFAD20D19235008E09B1 /* SqueezeNet.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
