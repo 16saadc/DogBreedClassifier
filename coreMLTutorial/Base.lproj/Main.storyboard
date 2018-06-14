@@ -18,21 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZM-Bx-Yi5">
-                                <rect key="frame" x="168" y="629" width="40" height="18"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nxQ-tl-VtO">
+                                <rect key="frame" x="168" y="611" width="40" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZM-Bx-Yi5">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brv-4b-0oB">
+                                        <rect key="frame" x="0.0" y="18" width="40" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OZM-Bx-Yi5" firstAttribute="centerX" secondItem="QKc-Ac-F12" secondAttribute="centerX" id="N6M-cJ-xrn"/>
-                            <constraint firstItem="Hsp-40-LuA" firstAttribute="bottom" secondItem="OZM-Bx-Yi5" secondAttribute="bottom" constant="20" id="rXi-Zo-qN1"/>
+                            <constraint firstItem="nxQ-tl-VtO" firstAttribute="centerX" secondItem="QKc-Ac-F12" secondAttribute="centerX" id="XY8-9T-hxk"/>
+                            <constraint firstItem="Hsp-40-LuA" firstAttribute="bottom" secondItem="nxQ-tl-VtO" secondAttribute="bottom" constant="20" id="pHK-U6-iBN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hsp-40-LuA"/>
                     </view>
                     <connections>
+                        <outlet property="confidenceLabel" destination="brv-4b-0oB" id="CEM-r0-vwT"/>
                         <outlet property="descriptionLabel" destination="OZM-Bx-Yi5" id="TTE-eS-nhQ"/>
                     </connections>
                 </viewController>

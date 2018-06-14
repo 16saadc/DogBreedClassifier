@@ -13,6 +13,7 @@ import Vision
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var confidenceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             guard let firstObservation = results.first else {return}
             print(firstObservation.identifier, firstObservation.confidence)
             DispatchQueue.main.async {
-                self.descriptionLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)"
+                self.descriptionLabel.text = "\(firstObservation.identifier)"
+                self.confidenceLabel.text = "\(firstObservation.confidence)"
             }
         }
         
