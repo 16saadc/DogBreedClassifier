@@ -13,7 +13,7 @@ import Vision
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var confidenceLabel: UILabel!
+    let confidence: Float = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +40,18 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         print("camera was able to capture a frame", Date())
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
         
-        guard let model = try? VNCoreMLModel(for: VGG16().model) else {return}
+        guard let model = try? VNCoreMLModel(for: DogBreeds().model) else {return}
         
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
             guard let results = finishedReq.results as? [VNClassificationObservation] else {return}
             guard let firstObservation = results.first else {return}
             print(firstObservation.identifier, firstObservation.confidence)
             DispatchQueue.main.async {
-                self.descriptionLabel.text = "\(firstObservation.identifier)"
-                self.confidenceLabel.text = "\(firstObservation.confidence)"
+                if (firstObservation.confidence > self.confidence) {
+                    self.descriptionLabel.text = "\(firstObservation.identifier)"
+                } else {
+                    self.descriptionLabel.text = ""
+                }
             }
         }
         
