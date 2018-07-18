@@ -7,24 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A482D44B20F6D9F0003CD55D /* DogBreeds.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A482D44A20F6D9F0003CD55D /* DogBreeds.mlmodel */; };
-		A486B00920D1F7F40097F154 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A486B00820D1F7F40097F154 /* VGG16.mlmodel */; };
+		A468303E20FFA0A000116D06 /* DogBreeds.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A468303D20FFA09F00116D06 /* DogBreeds.mlmodel */; };
 		A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5C20D17F9800935E84 /* AppDelegate.swift */; };
 		A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5E20D17F9800935E84 /* ViewController.swift */; };
 		A4B15C6220D17F9800935E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6020D17F9800935E84 /* Main.storyboard */; };
-		A4B15C6520D17F9800935E84 /* coreMLTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C6320D17F9800935E84 /* coreMLTutorial.xcdatamodeld */; };
 		A4B15C6720D17F9900935E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6620D17F9900935E84 /* Assets.xcassets */; };
 		A4B15C6A20D17F9900935E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6820D17F9900935E84 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A482D44A20F6D9F0003CD55D /* DogBreeds.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogBreeds.mlmodel; path = ../../../MLClassifier/DogBreeds.mlmodel; sourceTree = "<group>"; };
-		A486B00820D1F7F40097F154 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = VGG16.mlmodel; path = ../../../../Downloads/VGG16.mlmodel; sourceTree = "<group>"; };
-		A4B15C5920D17F9800935E84 /* coreMLTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coreMLTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A468303D20FFA09F00116D06 /* DogBreeds.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogBreeds.mlmodel; path = ../../../MLClassifier/DogBreeds.mlmodel; sourceTree = "<group>"; };
+		A4B15C5920D17F9800935E84 /* DogBreedClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBreedClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B15C5C20D17F9800935E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B15C5E20D17F9800935E84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4B15C6120D17F9800935E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A4B15C6420D17F9800935E84 /* coreMLTutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreMLTutorial.xcdatamodel; sourceTree = "<group>"; };
 		A4B15C6620D17F9900935E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B15C6920D17F9900935E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4B15C6B20D17F9900935E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,7 +40,7 @@
 		A4B15C5020D17F9800935E84 = {
 			isa = PBXGroup;
 			children = (
-				A4B15C5B20D17F9800935E84 /* coreMLTutorial */,
+				A4B15C5B20D17F9800935E84 /* DogBreedClassifier */,
 				A4B15C5A20D17F9800935E84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,33 +48,31 @@
 		A4B15C5A20D17F9800935E84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4B15C5920D17F9800935E84 /* coreMLTutorial.app */,
+				A4B15C5920D17F9800935E84 /* DogBreedClassifier.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A4B15C5B20D17F9800935E84 /* coreMLTutorial */ = {
+		A4B15C5B20D17F9800935E84 /* DogBreedClassifier */ = {
 			isa = PBXGroup;
 			children = (
 				A4B15C5C20D17F9800935E84 /* AppDelegate.swift */,
 				A4B15C5E20D17F9800935E84 /* ViewController.swift */,
-				A482D44A20F6D9F0003CD55D /* DogBreeds.mlmodel */,
-				A486B00820D1F7F40097F154 /* VGG16.mlmodel */,
 				A4B15C6020D17F9800935E84 /* Main.storyboard */,
+				A468303D20FFA09F00116D06 /* DogBreeds.mlmodel */,
 				A4B15C6620D17F9900935E84 /* Assets.xcassets */,
 				A4B15C6820D17F9900935E84 /* LaunchScreen.storyboard */,
 				A4B15C6B20D17F9900935E84 /* Info.plist */,
-				A4B15C6320D17F9800935E84 /* coreMLTutorial.xcdatamodeld */,
 			);
-			path = coreMLTutorial;
+			path = DogBreedClassifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4B15C5820D17F9800935E84 /* coreMLTutorial */ = {
+		A4B15C5820D17F9800935E84 /* DogBreedClassifier */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4B15C6E20D17F9900935E84 /* Build configuration list for PBXNativeTarget "coreMLTutorial" */;
+			buildConfigurationList = A4B15C6E20D17F9900935E84 /* Build configuration list for PBXNativeTarget "DogBreedClassifier" */;
 			buildPhases = (
 				A4B15C5520D17F9800935E84 /* Sources */,
 				A4B15C5620D17F9800935E84 /* Frameworks */,
@@ -88,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = coreMLTutorial;
-			productName = coreMLTutorial;
-			productReference = A4B15C5920D17F9800935E84 /* coreMLTutorial.app */;
+			name = DogBreedClassifier;
+			productName = DogBreedClassifier;
+			productReference = A4B15C5920D17F9800935E84 /* DogBreedClassifier.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A4B15C5420D17F9800935E84 /* Build configuration list for PBXProject "coreMLTutorial" */;
+			buildConfigurationList = A4B15C5420D17F9800935E84 /* Build configuration list for PBXProject "DogBreedClassifier" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4B15C5820D17F9800935E84 /* coreMLTutorial */,
+				A4B15C5820D17F9800935E84 /* DogBreedClassifier */,
 			);
 		};
 /* End PBXProject section */
@@ -144,9 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A482D44B20F6D9F0003CD55D /* DogBreeds.mlmodel in Sources */,
-				A4B15C6520D17F9800935E84 /* coreMLTutorial.xcdatamodeld in Sources */,
-				A486B00920D1F7F40097F154 /* VGG16.mlmodel in Sources */,
+				A468303E20FFA0A000116D06 /* DogBreeds.mlmodel in Sources */,
 				A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */,
 				A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */,
 			);
@@ -294,12 +286,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 887A9P34U6;
-				INFOPLIST_FILE = coreMLTutorial/Info.plist;
+				INFOPLIST_FILE = DogBreedClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chris.coreMLTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chris.DogBreedClassifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,12 +304,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 887A9P34U6;
-				INFOPLIST_FILE = coreMLTutorial/Info.plist;
+				INFOPLIST_FILE = DogBreedClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chris.coreMLTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chris.DogBreedClassifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,7 +319,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A4B15C5420D17F9800935E84 /* Build configuration list for PBXProject "coreMLTutorial" */ = {
+		A4B15C5420D17F9800935E84 /* Build configuration list for PBXProject "DogBreedClassifier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4B15C6C20D17F9900935E84 /* Debug */,
@@ -336,7 +328,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4B15C6E20D17F9900935E84 /* Build configuration list for PBXNativeTarget "coreMLTutorial" */ = {
+		A4B15C6E20D17F9900935E84 /* Build configuration list for PBXNativeTarget "DogBreedClassifier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4B15C6F20D17F9900935E84 /* Debug */,
@@ -346,19 +338,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A4B15C6320D17F9800935E84 /* coreMLTutorial.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A4B15C6420D17F9800935E84 /* coreMLTutorial.xcdatamodel */,
-			);
-			currentVersion = A4B15C6420D17F9800935E84 /* coreMLTutorial.xcdatamodel */;
-			path = coreMLTutorial.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A4B15C5120D17F9800935E84 /* Project object */;
 }
