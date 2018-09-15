@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A468303E20FFA0A000116D06 /* DogBreeds.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A468303D20FFA09F00116D06 /* DogBreeds.mlmodel */; };
+		A48B4A9B214D7012000ABAC5 /* DogBreeds.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A48B4A9A214D7012000ABAC5 /* DogBreeds.mlmodel */; };
 		A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5C20D17F9800935E84 /* AppDelegate.swift */; };
 		A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5E20D17F9800935E84 /* ViewController.swift */; };
 		A4B15C6220D17F9800935E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6020D17F9800935E84 /* Main.storyboard */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A468303D20FFA09F00116D06 /* DogBreeds.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogBreeds.mlmodel; path = ../../../MLClassifier/DogBreeds.mlmodel; sourceTree = "<group>"; };
+		A48B4A9A214D7012000ABAC5 /* DogBreeds.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogBreeds.mlmodel; path = ../../../../Desktop/DogBreeds.mlmodel; sourceTree = "<group>"; };
 		A4B15C5920D17F9800935E84 /* DogBreedClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBreedClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B15C5C20D17F9800935E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B15C5E20D17F9800935E84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 				A4B15C5C20D17F9800935E84 /* AppDelegate.swift */,
 				A4B15C5E20D17F9800935E84 /* ViewController.swift */,
 				A4B15C6020D17F9800935E84 /* Main.storyboard */,
-				A468303D20FFA09F00116D06 /* DogBreeds.mlmodel */,
+				A48B4A9A214D7012000ABAC5 /* DogBreeds.mlmodel */,
 				A4B15C6620D17F9900935E84 /* Assets.xcassets */,
 				A4B15C6820D17F9900935E84 /* LaunchScreen.storyboard */,
 				A4B15C6B20D17F9900935E84 /* Info.plist */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A468303E20FFA0A000116D06 /* DogBreeds.mlmodel in Sources */,
+				A48B4A9B214D7012000ABAC5 /* DogBreeds.mlmodel in Sources */,
 				A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */,
 				A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */,
 			);
