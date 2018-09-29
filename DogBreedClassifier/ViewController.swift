@@ -12,14 +12,18 @@ import Vision
 import MapKit
 import CoreLocation
 
+
+
+
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var cityStr: String = ""
     var stateStr: String = ""
     @IBOutlet weak var descriptionLabel: UILabel!
-    let confidence: Float = 0.5
+    let confidence: Float = 0.7
     
+    @IBOutlet weak var cameraView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,12 +44,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         let outputPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         view.layer.addSublayer(outputPreviewLayer)
-        outputPreviewLayer.frame = view.frame
+        outputPreviewLayer.frame = cameraView.frame
         //camera data output monitor
         let camOutput = AVCaptureVideoDataOutput()
         camOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(camOutput)
- 
+        self.descriptionLabel.text = "No breed found"
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -78,8 +83,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             DispatchQueue.main.async {
                 if (firstObservation.confidence > self.confidence) {
                     self.descriptionLabel.text = "\(id)"
+                    print(id)
                 } else {
-                    self.descriptionLabel.text = ""
+                    self.descriptionLabel.text = "No breed found"
                 }
             }
         }
@@ -88,6 +94,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     @IBAction func captureButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "showPetCells", sender: self)
+    
+        /**
         // capture what is in the label
         var splitName = self.descriptionLabel.text!.components(separatedBy: " ")
         if (splitName.count == 3) {
@@ -103,6 +112,34 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 UIApplication.shared.open(url, options: [:])
             }
         }
+ */
+
+        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=GA&animal=dog&count=3&format=json"
+        
+        guard let url = URL(string: urlString) else {return}
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            guard data != nil else { return }
+            
+            guard let data = data else { return }
+            let dataAsString = String(data: data, encoding: .utf8)
+            print(dataAsString!)
+            
+            do {
+                let dogData = try JSONDecoder().decode(Response.self, from: data)
+                for pet in (dogData.petfinder?.pets?.pet)! {
+                    print(pet.name!["$t"] ?? "no pet found")
+                }
+
+            } catch let jsonErr {
+                print("Error: ", jsonErr)
+            }
+            
+            
+        }.resume()
     }
     
     override func didReceiveMemoryWarning() {

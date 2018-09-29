@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZM-Bx-Yi5">
-                                <rect key="frame" x="187" y="53" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.99559134244918823" green="0.0" blue="0.03586951270699501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-7K-Cma">
                                 <rect key="frame" x="45.5" y="589" width="284" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -32,22 +26,96 @@
                                     <action selector="captureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kKU-YP-Q14"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No breed found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZM-Bx-Yi5">
+                                <rect key="frame" x="115" y="52" width="145" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.99559134244918823" green="0.0" blue="0.03586951270699501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KUW-9g-Nqz">
+                                <rect key="frame" x="0.0" y="106" width="375" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hsp-40-LuA" firstAttribute="bottom" secondItem="v9l-7K-Cma" secondAttribute="bottom" constant="38" id="6kG-py-O8X"/>
+                            <constraint firstItem="OZM-Bx-Yi5" firstAttribute="centerX" secondItem="QKc-Ac-F12" secondAttribute="centerX" id="Mnp-1H-OYw"/>
                             <constraint firstItem="OZM-Bx-Yi5" firstAttribute="centerX" secondItem="QKc-Ac-F12" secondAttribute="centerX" id="Zh0-cJ-4jV"/>
+                            <constraint firstItem="KUW-9g-Nqz" firstAttribute="centerY" secondItem="QKc-Ac-F12" secondAttribute="centerY" id="b8g-nf-Mzq"/>
                             <constraint firstItem="v9l-7K-Cma" firstAttribute="centerX" secondItem="QKc-Ac-F12" secondAttribute="centerX" id="hyC-DA-UV9"/>
+                            <constraint firstItem="OZM-Bx-Yi5" firstAttribute="centerX" secondItem="QKc-Ac-F12" secondAttribute="centerX" id="nhu-jA-LY9"/>
+                            <constraint firstItem="OZM-Bx-Yi5" firstAttribute="top" secondItem="Hsp-40-LuA" secondAttribute="top" constant="32" id="zqH-k8-3uP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hsp-40-LuA"/>
                     </view>
                     <connections>
+                        <outlet property="cameraView" destination="KUW-9g-Nqz" id="Spe-CK-moT"/>
                         <outlet property="descriptionLabel" destination="OZM-Bx-Yi5" id="TTE-eS-nhQ"/>
+                        <segue destination="9Qc-dI-fql" kind="show" identifier="showPetCells" id="X4b-hB-dTy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="120.98950524737631"/>
+            <point key="canvasLocation" x="-55" y="112"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="zTR-9S-qsv">
+            <objects>
+                <tableViewController id="9Qc-dI-fql" customClass="TableViewController" customModule="DogBreedClassifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6f4-pH-jLU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PetTableViewCell" rowHeight="90" id="OBc-OL-Ogi" customClass="PetTableViewCell" customModule="DogBreedClassifier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OBc-OL-Ogi" id="Rc6-73-ZGU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJS-8X-9se">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="89.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6h6-1e-Ib5">
+                                            <rect key="frame" x="98" y="11" width="261" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8t3-W8-eVC">
+                                            <rect key="frame" x="98" y="34" width="261" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eJS-8X-9se" firstAttribute="top" secondItem="Rc6-73-ZGU" secondAttribute="top" id="3f5-ty-O0t"/>
+                                        <constraint firstAttribute="bottom" secondItem="eJS-8X-9se" secondAttribute="bottom" id="4QQ-bf-58m"/>
+                                        <constraint firstItem="eJS-8X-9se" firstAttribute="leading" secondItem="Rc6-73-ZGU" secondAttribute="leading" id="G4f-bU-3WD"/>
+                                        <constraint firstItem="eJS-8X-9se" firstAttribute="leading" secondItem="Rc6-73-ZGU" secondAttribute="leading" id="irb-ae-vr7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="breedLabel" destination="8t3-W8-eVC" id="7X2-o5-njd"/>
+                                    <outlet property="nameLabel" destination="6h6-1e-Ib5" id="3cJ-WC-FWw"/>
+                                    <outlet property="petImageView" destination="eJS-8X-9se" id="Fpp-Ds-cAt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Qc-dI-fql" id="8qE-pd-h6a"/>
+                            <outlet property="delegate" destination="9Qc-dI-fql" id="GFt-WZ-2HM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjC-MF-GYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754.39999999999998" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

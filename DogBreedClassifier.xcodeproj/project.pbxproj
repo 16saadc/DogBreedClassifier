@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A48B4A9B214D7012000ABAC5 /* DogBreeds.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A48B4A9A214D7012000ABAC5 /* DogBreeds.mlmodel */; };
 		A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5C20D17F9800935E84 /* AppDelegate.swift */; };
 		A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15C5E20D17F9800935E84 /* ViewController.swift */; };
 		A4B15C6220D17F9800935E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6020D17F9800935E84 /* Main.storyboard */; };
 		A4B15C6720D17F9900935E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6620D17F9900935E84 /* Assets.xcassets */; };
 		A4B15C6A20D17F9900935E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B15C6820D17F9900935E84 /* LaunchScreen.storyboard */; };
+		A4B9E92F2156E9C000203C90 /* DogBreeds.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E92D2156E7C700203C90 /* DogBreeds.mlmodel */; };
+		A4B9E933215D79D700203C90 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E932215D79D700203C90 /* JsonDecoder.swift */; };
+		A4B9E935215F377100203C90 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E934215F377100203C90 /* TableViewController.swift */; };
+		A4B9E937215F395C00203C90 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E936215F395C00203C90 /* PetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A48B4A9A214D7012000ABAC5 /* DogBreeds.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogBreeds.mlmodel; path = ../../../../Desktop/DogBreeds.mlmodel; sourceTree = "<group>"; };
 		A4B15C5920D17F9800935E84 /* DogBreedClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBreedClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B15C5C20D17F9800935E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B15C5E20D17F9800935E84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,10 @@
 		A4B15C6620D17F9900935E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B15C6920D17F9900935E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4B15C6B20D17F9900935E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4B9E92D2156E7C700203C90 /* DogBreeds.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogBreeds.mlmodel; path = ../../../Desktop/DogBreeds.mlmodel; sourceTree = SOURCE_ROOT; };
+		A4B9E932215D79D700203C90 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
+		A4B9E934215F377100203C90 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A4B9E936215F395C00203C90 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +62,16 @@
 		A4B15C5B20D17F9800935E84 /* DogBreedClassifier */ = {
 			isa = PBXGroup;
 			children = (
+				A4B9E92D2156E7C700203C90 /* DogBreeds.mlmodel */,
 				A4B15C5C20D17F9800935E84 /* AppDelegate.swift */,
 				A4B15C5E20D17F9800935E84 /* ViewController.swift */,
 				A4B15C6020D17F9800935E84 /* Main.storyboard */,
-				A48B4A9A214D7012000ABAC5 /* DogBreeds.mlmodel */,
 				A4B15C6620D17F9900935E84 /* Assets.xcassets */,
 				A4B15C6820D17F9900935E84 /* LaunchScreen.storyboard */,
 				A4B15C6B20D17F9900935E84 /* Info.plist */,
+				A4B9E932215D79D700203C90 /* JsonDecoder.swift */,
+				A4B9E934215F377100203C90 /* TableViewController.swift */,
+				A4B9E936215F395C00203C90 /* PetTableViewCell.swift */,
 			);
 			path = DogBreedClassifier;
 			sourceTree = "<group>";
@@ -138,8 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A48B4A9B214D7012000ABAC5 /* DogBreeds.mlmodel in Sources */,
+				A4B9E933215D79D700203C90 /* JsonDecoder.swift in Sources */,
+				A4B9E937215F395C00203C90 /* PetTableViewCell.swift in Sources */,
+				A4B9E92F2156E9C000203C90 /* DogBreeds.mlmodel in Sources */,
 				A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */,
+				A4B9E935215F377100203C90 /* TableViewController.swift in Sources */,
 				A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +296,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Saad (JCX463N52B)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 887A9P34U6;
 				INFOPLIST_FILE = DogBreedClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -293,6 +307,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chris.DogBreedClassifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ProjectDevelopmentProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,7 +317,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chris Saad (887A9P34U6)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 887A9P34U6;
 				INFOPLIST_FILE = DogBreedClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,6 +328,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chris.DogBreedClassifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ProjectDistributionProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
