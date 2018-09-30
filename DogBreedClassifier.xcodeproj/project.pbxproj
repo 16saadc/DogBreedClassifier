@@ -16,6 +16,7 @@
 		A4B9E933215D79D700203C90 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E932215D79D700203C90 /* JsonDecoder.swift */; };
 		A4B9E935215F377100203C90 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E934215F377100203C90 /* TableViewController.swift */; };
 		A4B9E937215F395C00203C90 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E936215F395C00203C90 /* PetTableViewCell.swift */; };
+		A4B9E93921606D0400203C90 /* PetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9E93821606D0400203C90 /* PetInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A4B9E932215D79D700203C90 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		A4B9E934215F377100203C90 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A4B9E936215F395C00203C90 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
+		A4B9E93821606D0400203C90 /* PetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				A4B9E932215D79D700203C90 /* JsonDecoder.swift */,
 				A4B9E934215F377100203C90 /* TableViewController.swift */,
 				A4B9E936215F395C00203C90 /* PetTableViewCell.swift */,
+				A4B9E93821606D0400203C90 /* PetInfoViewController.swift */,
 			);
 			path = DogBreedClassifier;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				A4B15C5F20D17F9800935E84 /* ViewController.swift in Sources */,
 				A4B9E935215F377100203C90 /* TableViewController.swift in Sources */,
 				A4B15C5D20D17F9800935E84 /* AppDelegate.swift in Sources */,
+				A4B9E93921606D0400203C90 /* PetInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

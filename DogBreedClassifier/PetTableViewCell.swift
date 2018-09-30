@@ -10,7 +10,8 @@ import UIKit
 
 class PetTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var breedLabel: UILabel!
+    @IBOutlet weak var sexLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var petImageView: UIImageView!
     override func awakeFromNib() {
@@ -24,4 +25,8 @@ class PetTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+
+    @IBAction func viewPetButton(_ sender: Any) {
+        
+    }
 }

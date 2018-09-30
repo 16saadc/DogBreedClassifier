@@ -10,37 +10,61 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    //var breed: String?
+    var pets: [Pet]?
+    var sample: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (self.pets?.count)!
     }
+    
+    
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath) as? PetTableViewCell else {
+            fatalError("The dequeued cell is not an instance of PetTableViewCell.")
+        }
+        
+        
+        let p = pets![indexPath.row]
+        cell.nameLabel.text = p.name!["$t"]
+        cell.ageLabel.text = "Age: " + p.age!["$t"]!
+        cell.sexLabel.text = "Sex: " + p.sex!["$t"]!
+        let picUrl = URL(string: (p.media?.photos?.photo![1]["$t"])!)
+        
+        let imageData = try! Data(contentsOf: picUrl!)
+        let image = UIImage(data: imageData)
+        cell.imageView?.image = image
+        cell.viewPetButton(self)
+        
+        
+        
+        
+        //cell.imageView?.image = p.media?.photos?.photo![0]["$t"]
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    func doSegue() {
+        performSegue(withIdentifier: "showPetInfoSegue", sender: self)
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

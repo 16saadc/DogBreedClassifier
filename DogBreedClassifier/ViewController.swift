@@ -22,6 +22,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var stateStr: String = ""
     @IBOutlet weak var descriptionLabel: UILabel!
     let confidence: Float = 0.7
+    //var capturedBreed: String = ""
+    var pets: [Pet]?
     
     @IBOutlet weak var cameraView: UIView!
     override func viewDidLoad() {
@@ -83,6 +85,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             DispatchQueue.main.async {
                 if (firstObservation.confidence > self.confidence) {
                     self.descriptionLabel.text = "\(id)"
+                    //self.capturedBreed = firstObservation.identifier
                     print(id)
                 } else {
                     self.descriptionLabel.text = "No breed found"
@@ -93,53 +96,65 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
     
-    @IBAction func captureButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "showPetCells", sender: self)
     
-        /**
-        // capture what is in the label
-        var splitName = self.descriptionLabel.text!.components(separatedBy: " ")
-        if (splitName.count == 3) {
-            if let url = URL(string: "https://www.petfinder.com/search/dogs-for-adoption/us/" + stateStr + "/" + cityStr + "/?breed%5B0%5D=" + splitName[0] + "+" + splitName[1] + "+" + splitName[2] + "&sort%5B0%5D=recently_added") {
-                UIApplication.shared.open(url, options: [:])
-            }
-        } else if (splitName.count == 2) {
-            if let url = URL(string: "https://www.petfinder.com/search/dogs-for-adoption/us/" + stateStr + "/" + cityStr + "/?breed%5B0%5D=" + splitName[0] + "+" + splitName[1] + "&sort%5B0%5D=recently_added") {
-                UIApplication.shared.open(url, options: [:])
-            }
-        } else {
-            if let url = URL(string: "https://www.petfinder.com/search/dogs-for-adoption/us/" + stateStr + "/" + cityStr + "/?breed%5B0%5D=" + splitName[0] + "&sort%5B0%5D=recently_added") {
-                UIApplication.shared.open(url, options: [:])
-            }
-        }
- */
-
-        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=GA&animal=dog&count=3&format=json"
+    func getPets(completion: @escaping ([Pet]?, Error?) -> ()) {
+        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=ga&animal=dog&count=50&format=json"
+        guard let url = URL(string: urlString) else { return }
         
-        guard let url = URL(string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
             }
             
-            guard data != nil else { return }
+            //guard data != nil else { return }
             
             guard let data = data else { return }
-            let dataAsString = String(data: data, encoding: .utf8)
-            print(dataAsString!)
+            //let dataAsString = String(data: data, encoding: .utf8)
+            //print(dataAsString!)
             
             do {
                 let dogData = try JSONDecoder().decode(Response.self, from: data)
-                for pet in (dogData.petfinder?.pets?.pet)! {
-                    print(pet.name!["$t"] ?? "no pet found")
+                if let petData = dogData.petfinder?.pets?.pet {
+                    print("pet data found")
+                    DispatchQueue.main.async {
+                        completion(petData, nil)
+                    }
                 }
-
+                
             } catch let jsonErr {
+                completion(nil, error)
                 print("Error: ", jsonErr)
             }
             
-            
         }.resume()
+    }
+    
+    
+    @IBAction func captureButton(_ sender: UIButton) {
+        
+        let group = DispatchGroup()
+        group.enter()
+        getPets { (petArr, err) in
+            DispatchQueue.main.async {
+                self.pets = petArr
+                group.leave()
+            }
+        }
+        
+        
+        group.notify(queue: .main) {
+            self.performSegue(withIdentifier: "showPetCells", sender: self)
+        }
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //let breed = capturedBreed
+        if let tableViewController = segue.destination as? TableViewController {
+            tableViewController.pets = self.pets
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

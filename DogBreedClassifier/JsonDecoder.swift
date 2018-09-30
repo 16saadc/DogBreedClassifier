@@ -37,21 +37,38 @@ struct Status: Decodable {
 
 struct Pet: Decodable {
     let id: Dictionary<String, String>?
-    let shelterId: Dictionary<String, String>?
-    let shelterPetId: Dictionary<String, String>?
+    let shelterId: Dictionary<String, String>? = nil
+    let shelterPetId: Dictionary<String, String>? = nil
     let name: Dictionary<String, String>?
     let animal: Dictionary<String, String>?
-    let breeds: Breeds?
+    let breeds: Breeds? = nil
     let mix: Dictionary<String, String>?
     let age: Dictionary<String, String>?
     let sex: Dictionary<String, String>?
     let size: Dictionary<String, String>?
-    let options: Option?
+    let options: Option? = nil
     let description: Dictionary<String, String>?
     let lastUpdate: Dictionary<String, String>?
     let status: Dictionary<String, String>?
     let media: Media?
     let contact: Contact?
+    
+    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case animal
+        case mix
+        case age
+        case sex
+        case size
+        case description
+        case lastUpdate
+        case status
+        case media
+        case contact
+        
+    }
     
 }
 
@@ -61,7 +78,7 @@ struct Option: Decodable {
 
 
 struct Breeds: Decodable {
-    let breed: Dictionary<String, String>?
+    let breed: Dictionary<String?, String?>?
 }
 
 
@@ -82,13 +99,13 @@ struct Media: Decodable {
 }
 
 struct Photo: Decodable {
-    let photo: [PhotoInst]?
+    let photo: [Dictionary<String, String>]?
 }
 
-
-struct PhotoInst: Decodable {
-    let size: String?
-    let t: String?
-    let id: String?
-}
+//
+//struct PhotoInst: Decodable {
+//    let size: String?
+//    let t: String?
+//    let id: String?
+//}
 
