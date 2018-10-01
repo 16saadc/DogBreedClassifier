@@ -16,7 +16,7 @@ class PetInfoViewController: UIViewController {
     var petImage: UIImage?
     var petSex: String?
     var phone: String?
-    
+    var zip: String?
     
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,6 +28,7 @@ class PetInfoViewController: UIViewController {
     @IBOutlet weak var sexLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var zipLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class PetInfoViewController: UIViewController {
         emailLabel.text = "Email: " + (email ?? "no email found")
         descriptionLabel.text = (petDescription ?? "no description found")
         phoneLabel.text = "Phone: " + (phone ?? "No phone found")
-        
+        zipLabel.text = "Zip Code: " + (zip ?? "Zip code not found")
         // Do any additional setup after loading the view.
     }
     

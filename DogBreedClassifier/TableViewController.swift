@@ -69,6 +69,7 @@ class TableViewController: UITableViewController {
         let imageData = try! Data(contentsOf: imgURL!)
         let image = UIImage(data: imageData)
         vc?.petImage = image
+        vc?.zip = pets![indexPath.row].contact?.zip!["$t"]
         
         
         

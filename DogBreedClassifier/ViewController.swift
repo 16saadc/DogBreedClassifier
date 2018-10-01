@@ -89,6 +89,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                     print(id)
                 } else {
                     self.descriptionLabel.text = "No breed found"
+                    self.capturedBreed = "NA"
                 }
             }
         }
@@ -98,8 +99,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     
     func getPets(completion: @escaping ([Pet]?, Error?) -> ()) {
-        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=ga&animal=dog&count=50&format=json&breed=American+Bulldog"
-//        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=" + self.stateStr + "&animal=dog&count=50&format=json&breed=" + capturedBreed
+        //let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=ga&animal=dog&count=50&format=json&breed=American+Bulldog"
+        if (self.capturedBreed == "NA") {
+            return
+        }
+        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=" + self.stateStr + "&animal=dog&count=50&format=json&breed=" + self.capturedBreed
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
