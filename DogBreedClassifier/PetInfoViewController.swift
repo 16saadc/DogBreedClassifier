@@ -10,9 +10,35 @@ import UIKit
 
 class PetInfoViewController: UIViewController {
 
+    var email: String?
+    var petName: String?
+    var petDescription: String?
+    var petImage: UIImage?
+    var petSex: String?
+    var phone: String?
+    
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
+    @IBOutlet weak var petUIImage: UIImageView!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var sexLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nameLabel.text = petName ?? "no name found"
+        petUIImage.image = petImage ?? nil
+        sexLabel.text = "Sex: " + (petSex ?? "no sex found")
+        emailLabel.text = "Email: " + (email ?? "no email found")
+        descriptionLabel.text = (petDescription ?? "no description found")
+        phoneLabel.text = "Phone: " + (phone ?? "No phone found")
+        
         // Do any additional setup after loading the view.
     }
     

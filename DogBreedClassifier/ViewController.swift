@@ -22,7 +22,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var stateStr: String = ""
     @IBOutlet weak var descriptionLabel: UILabel!
     let confidence: Float = 0.7
-    //var capturedBreed: String = ""
+    var capturedBreed: String = ""
     var pets: [Pet]?
     
     @IBOutlet weak var cameraView: UIView!
@@ -85,7 +85,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             DispatchQueue.main.async {
                 if (firstObservation.confidence > self.confidence) {
                     self.descriptionLabel.text = "\(id)"
-                    //self.capturedBreed = firstObservation.identifier
+                    self.capturedBreed = firstObservation.identifier.replacingOccurrences(of: "_", with: "+")
                     print(id)
                 } else {
                     self.descriptionLabel.text = "No breed found"
@@ -98,7 +98,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     
     func getPets(completion: @escaping ([Pet]?, Error?) -> ()) {
-        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=ga&animal=dog&count=50&format=json"
+        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=ga&animal=dog&count=50&format=json&breed=American+Bulldog"
+//        let urlString = "http://api.petfinder.com/pet.find?key=369f2db448e6c1fc647834d2dd7debdc&location=" + self.stateStr + "&animal=dog&count=50&format=json&breed=" + capturedBreed
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in

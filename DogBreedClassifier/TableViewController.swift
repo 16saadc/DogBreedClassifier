@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
 
     //var breed: String?
     var pets: [Pet]?
-    var sample: String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,15 +45,12 @@ class TableViewController: UITableViewController {
         cell.nameLabel.text = p.name!["$t"]
         cell.ageLabel.text = "Age: " + p.age!["$t"]!
         cell.sexLabel.text = "Sex: " + p.sex!["$t"]!
-        let picUrl = URL(string: (p.media?.photos?.photo![1]["$t"])!)
         
+        let picUrl = URL(string: (p.media?.photos?.photo![1]["$t"])!)
         let imageData = try! Data(contentsOf: picUrl!)
         let image = UIImage(data: imageData)
         cell.imageView?.image = image
-        cell.viewPetButton(self)
-        
-        
-        
+
         
         //cell.imageView?.image = p.media?.photos?.photo![0]["$t"]
         // Configure the cell...
@@ -61,8 +58,22 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    func doSegue() {
-        performSegue(withIdentifier: "showPetInfoSegue", sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PetInfoViewController") as? PetInfoViewController
+        vc?.petDescription = pets![indexPath.row].description!["$t"]
+        vc?.email = pets![indexPath.row].contact?.email!["$t"]
+        vc?.petName = pets![indexPath.row].name!["$t"]
+        vc?.phone = pets![indexPath.row].contact?.phone!["$t"]
+        vc?.petSex = pets![indexPath.row].sex!["$t"]
+        let imgURL = URL(string: ((pets![indexPath.row].media?.photos?.photo![3]["$t"])!))
+        let imageData = try! Data(contentsOf: imgURL!)
+        let image = UIImage(data: imageData)
+        vc?.petImage = image
+        
+        
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
 
 

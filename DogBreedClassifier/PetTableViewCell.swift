@@ -25,8 +25,4 @@ class PetTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-
-    @IBAction func viewPetButton(_ sender: Any) {
-        
-    }
 }
