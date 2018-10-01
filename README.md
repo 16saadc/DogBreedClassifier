@@ -1,4 +1,7 @@
 # DogBreedClassifier
+
+** This App will be availabe on the app store soon! **
+
 Use CoreML and Vision to detect dog breeds and find those types of dogs for adoption near you
 
 Train and Test the model using the DogMLClassifier repository in my account and follow the instructions there.
