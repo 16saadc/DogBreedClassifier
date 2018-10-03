@@ -51,8 +51,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let camOutput = AVCaptureVideoDataOutput()
         camOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(camOutput)
-        self.descriptionLabel.text = "No breed found"
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
