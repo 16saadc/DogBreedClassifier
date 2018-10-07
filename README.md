@@ -1,6 +1,7 @@
 # DogBreedClassifier
 
-** This App will be availabe on the app store soon! **
+Available on the App Store: https://itunes.apple.com/us/app/doggo-finder/id1436553491?mt=8
+
 
 Use CoreML and Vision to detect dog breeds and find those types of dogs for adoption near you
 
